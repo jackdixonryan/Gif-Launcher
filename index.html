@@ -7,15 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
 
     <link rel="stylesheet" href="style.css">
 
+
+
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Gif Launcher</a>
     </nav>
     <div id="main" class="jumbotron">
@@ -23,13 +26,16 @@
         <hr>
         <div class="input-group">
             <div class="input-group-prepend">
-                <button class="btn btn-primary" type="button" id="search">This is the Button</button>
+                <button class="btn btn-primary" id="search">This is the Button</button>
             </div>
             <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="search-term">
         </div>
     </div>
 
-    <div class="container" id="button-area"></div>
+    <div class="container" id="button-area">
+        <button class="btn btn-secondary pusher" value="World Cup">World Cup</button>
+    </div>
+
     <div class="container" id="gif-area"></div>
 
     <script

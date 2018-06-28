@@ -6,3 +6,20 @@
     height: 60px;
     font-size: 20px;
 }
+
+.btn-secondary {
+    font-size: 20px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.card {
+    margin: 25px;
+    text-align: center;
+    padding: 20px;
+    float: left;
+}
+
+img {
+    max-width: 400px;
+}
