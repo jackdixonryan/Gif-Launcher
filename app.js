@@ -39,15 +39,15 @@ $(document).ready(function() {
             method: "GET"
         }).then(function(response) {
 
+            var gifArea = $("<div>");
+            $(gifArea).addClass("container");
+
             //Appending the gif to the gif-area container.
             for (var i = 0; i < 10; i++) {
 
                 var stillUrl = response.data[i].images.original_still.url;
-                console.log(stillUrl);
 
                 var movingUrl = response.data[i].images.original.url;
-                console.log(movingUrl);
-
 
                 var gifDiv = $("<div>");
                 $(gifDiv).addClass("card");
@@ -74,26 +74,27 @@ $(document).ready(function() {
                 $(gifDiv).append(gifRating);
 
 
-                $("#gif-area").append(gifDiv);
+                $(gifArea).append(gifDiv);
+                $("#main-container").html(gifArea);
 
             }
 
-            $(document).on("click", ".gif", function() { 
-                console.log("clicked");
-                var stillSrc = $(this).attr("data-still");
-                var movingSrc = $(this).attr("data-moving");
-
-                var currentState = $(this).attr("src");
-
-                if (currentState === stillSrc) {
-                    $(this).attr("src", movingSrc);
-                } else if (currentState === movingSrc) {
-                    $(this).attr("src", stillSrc);
-                }
-            });
-
         });
 
+    });
+
+    $(document).on("click", ".gif", function() { 
+        console.log("clicked");
+        var stillSrc = $(this).attr("data-still");
+        var movingSrc = $(this).attr("data-moving");
+
+        var currentState = $(this).attr("src");
+
+        if (currentState === stillSrc) {
+            $(this).attr("src", movingSrc);
+        } else if (currentState === movingSrc) {
+            $(this).attr("src", stillSrc);
+        }
     });
 
 });
